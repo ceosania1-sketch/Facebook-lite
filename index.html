@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Facebook Lite</title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =========================
+     TOP NAVIGATION
+========================= -->
+
+<header class="topbar">
+
+    <div class="logo-area">
+        <div class="logo">f</div>
+        <h1>Facebook Lite</h1>
+    </div>
+
+    <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search Facebook Lite..."
+        >
+    </div>
+
+    <nav class="top-icons">
+
+        <button title="Home" onclick="showPage('home')">
+            <i class="fa-solid fa-house"></i>
+        </button>
+
+        <button title="Friends" onclick="showPage('friends')">
+            <i class="fa-solid fa-user-group"></i>
+        </button>
+
+        <button title="Messages" onclick="showPage('messages')">
+            <i class="fa-brands fa-facebook-messenger"></i>
+        </button>
+
+        <button title="Notifications" onclick="toggleNotifications()">
+            <i class="fa-solid fa-bell"></i>
+            <span class="badge">5</span>
+        </button>
+
+        <button title="Menu" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================
+     NOTIFICATION PANEL
+========================= -->
+
+<div id="notificationPanel" class="notification-panel">
+
+    <h2>Notifications</h2>
+
+    <div class="notification">
+        <div class="notification-icon">
+            <i class="fa-solid fa-heart"></i>
+        </div>
+
+        <div>
+            <strong>Ayesha</strong> liked your post.
+            <small>2 minutes ago</small>
+        </div>
+    </div>
+
+    <div class="notification">
+        <div class="notification-icon">
+            <i class="fa-solid fa-user-plus"></i>
+        </div>
+
+        <div>
+            <strong>Ali</strong> sent you a friend request.
+            <small>10 minutes ago</small>
+        </div>
+    </div>
+
+    <div class="notification">
+        <div class="notification-icon">
+            <i class="fa-solid fa-comment"></i>
+        </div>
+
+        <div>
+            <strong>Sara</strong> commented on your post.
+            <small>20 minutes ago</small>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- =========================
+     MAIN LAYOUT
+========================= -->
+
+<main class="main-container">
+
+
+    <!-- =====================
+         LEFT SIDEBAR
+    ====================== -->
+
+    <aside class="left-sidebar">
+
+        <div class="profile-mini">
+            <div class="avatar">S</div>
+
+            <div>
+                <strong>Sania</strong>
+                <small>View Profile</small>
+            </div>
+        </div>
+
+
+        <ul class="side-menu">
+
+            <li onclick="showPage('home')">
+                <i class="fa-solid fa-house"></i>
+                Home
+            </li>
+
+            <li onclick="showPage('friends')">
+                <i class="fa-solid fa-user-group"></i>
+                Friends
+            </li>
+
+            <li>
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                Memories
+            </li>
+
+            <li>
+                <i class="fa-solid fa-bookmark"></i>
+                Saved
+            </li>
+
+            <li>
+                <i class="fa-solid fa-users"></i>
+                Groups
+            </li>
+
+            <li>
+                <i class="fa-solid fa-shop"></i>
+                Marketplace
+            </li>
+
+            <li>
+                <i class="fa-solid fa-video"></i>
+                Videos
+            </li>
+
+            <li>
+                <i class="fa-solid fa-flag"></i>
+                Pages
+            </li>
+
+            <li>
+                <i class="fa-solid fa-calendar"></i>
+                Events
+            </li>
+
+            <li>
+                <i class="fa-solid fa-gamepad"></i>
+                Gaming
+            </li>
+
+        </ul>
+
+
+        <div class="shortcut-title">
+            Your Shortcuts
+        </div>
+
+        <div class="shortcut">
+            <div class="shortcut-icon">🎮</div>
+            Gaming Community
+        </div>
+
+        <div class="shortcut">
+            <div class="shortcut-icon">💻</div>
+            Computer Lovers
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================
+         CENTER CONTENT
+    ====================== -->
+
+    <section class="feed" id="homePage">
+
+
+        <!-- STORIES -->
+
+        <div class="stories">
+
+            <div class="story create-story">
+
+                <div class="story-image create-image">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+
+                <strong>Create Story</strong>
+
+            </div>
+
+
+            <div class="story">
+
+                <div class="story-image story-one">
+                    <span class="story-avatar">A</span>
+                </div>
+
+                <strong>Ayesha</strong>
+
+            </div>
+
+
+            <div class="story">
+
+                <div class="story-image story-two">
+                    <span class="story-avatar">S</span>
+                </div>
+
+                <strong>Sara</strong>
+
+            </div>
+
+
+            <div class="story">
+
+                <div class="story-image story-three">
+                    <span class="story-avatar">M</span>
+                </div>
+
+                <strong>Maria</strong>
+
+            </div>
+
+
+            <div class="story">
+
+                <div class="story-image story-four">
+                    <span class="story-avatar">A</span>
+                </div>
+
+                <strong>Ali</strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CREATE POST -->
+
+        <div class="create-post">
+
+            <div class="post-top">
+
+                <div class="avatar">S</div>
+
+                <input
+                    type="text"
+                    id="postInput"
+                    placeholder="What's on your mind?"
+                >
+
+            </div>
+
+
+            <div class="post-options">
+
+                <button onclick="addPhoto()">
+                    <i class="fa-solid fa-image"></i>
+                    Photo
+                </button>
+
+                <button onclick="addVideo()">
+                    <i class="fa-solid fa-video"></i>
+                    Video
+                </button>
+
+                <button onclick="addFeeling()">
+                    <i class="fa-solid fa-face-smile"></i>
+                    Feeling
+                </button>
+
+            </div>
+
+
+            <button class="post-button" onclick="createPost()">
+                Post
+            </button>
+
+        </div>
+
+
+
+        <!-- =================
+             POST 1
+        ================== -->
+
+        <article class="post" id="post1">
+
+            <div class="post-header">
+
+                <div class="avatar blue-avatar">A</div>
+
+                <div class="post-user">
+
+                    <strong>Ayesha Khan</strong>
+
+                    <small>
+                        1 hr · <i class="fa-solid fa-earth-americas"></i>
+                    </small>
+
+                </div>
+
+                <button class="more-btn">
+                    <i class="fa-solid fa-ellipsis"></i>
+                </button>
+
+            </div>
+
+
+            <div class="post-text">
+
+                <p>
+                    Hello everyone! 👋
+                    Welcome to my new social media page.
+                </p>
+
+                <p>
+                    Have a wonderful day! ❤️
+                </p>
+
+            </div>
+
+
+            <div class="post-image">
+                <div class="fake-image">
+                    🌸
+                    <span>Beautiful Day</span>
+                </div>
+            </div>
+
+
+            <div class="post-stats">
+
+                <span>
+                    ❤️ 👍
+                    <span class="like-count">124</span>
+                </span>
+
+                <span>
+                    32 comments · 8 shares
+                </span>
+
+            </div>
+
+
+            <div class="post-actions">
+
+                <button onclick="likePost(this)">
+                    <i class="fa-regular fa-thumbs-up"></i>
+                    Like
+                </button>
+
+                <button onclick="toggleComments('comments1')">
+                    <i class="fa-regular fa-comment"></i>
+                    Comment
+                </button>
+
+                <button onclick="sharePost()">
+                    <i class="fa-solid fa-share"></i>
+                    Share
+                </button>
+
+            </div>
+
+
+            <div class="comments" id="comments1">
+
+                <div class="comment">
+                    <div class="small-avatar">S</div>
+
+                    <div class="comment-body">
+                        <strong>Sara</strong>
+                        <p>Beautiful! ❤️</p>
+                    </div>
+                </div>
+
+
+                <div class="comment-input">
+
+                    <div class="small-avatar">S</div>
+
+                    <input
+                        type="text"
+                        placeholder="Write a comment..."
+                        onkeypress="commentEnter(event, this)"
+                    >
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================
+             POST 2
+        ================== -->
+
+        <article class="post">
+
+            <div class="post-header">
+
+                <div class="avatar green-avatar">M</div>
+
+                <div class="post-user">
+
+                    <strong>Maria Ahmed</strong>
+
+                    <small>
+                        3 hrs · <i class="fa-solid fa-earth-americas"></i>
+                    </small>
+
+                </div>
+
+                <button class="more-btn">
+                    <i class="fa-solid fa-ellipsis"></i>
+                </button>
+
+            </div>
+
+
+            <div class="post-text">
+
+                <p>
+                    Learning new things every day! 💻✨
+                </p>
+
+            </div>
+
+
+            <div class="code-card">
+
+                <div class="code-header">
+                    <span>💻 My Project</span>
+                    <span>HTML</span>
+                </div>
+
+                <div class="code-content">
+                    &lt;h1&gt;Hello World!&lt;/h1&gt;
+                </div>
+
+            </div>
+
+
+            <div class="post-stats">
+
+                <span>👍 ❤️ 86</span>
+
+                <span>15 comments · 4 shares</span>
+
+            </div>
+
+
+            <div class="post-actions">
+
+                <button onclick="likePost(this)">
+                    <i class="fa-regular fa-thumbs-up"></i>
+                    Like
+                </button>
+
+                <button onclick="toggleComments('comments2')">
+                    <i class="fa-regular fa-comment"></i>
+                    Comment
+                </button>
+
+                <button onclick="sharePost()">
+                    <i class="fa-solid fa-share"></i>
+                    Share
+                </button>
+
+            </div>
+
+
+            <div class="comments" id="comments2">
+
+                <div class="comment-input">
+
+                    <div class="small-avatar">S</div>
+
+                    <input
+                        type="text"
+                        placeholder="Write a comment..."
+                        onkeypress="commentEnter(event, this)"
+                    >
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+    </section>
+
+
+
+    <!-- =====================
+         RIGHT SIDEBAR
+    ====================== -->
+
+    <aside class="right-sidebar">
+
+
+        <div class="sidebar-card">
+
+            <div class="sidebar-title">
+                Friend Requests
+                <a href="#">See All</a>
+            </div>
+
+
+            <div class="friend-request">
+
+                <div class="avatar purple-avatar">A</div>
+
+                <div class="friend-info">
+
+                    <strong>Ali Raza</strong>
+
+                    <small>5 mutual friends</small>
+
+                    <div class="friend-buttons">
+
+                        <button class="confirm">
+                            Confirm
+                        </button>
+
+                        <button class="delete">
+                            Delete
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="sidebar-card">
+
+            <div class="sidebar-title">
+                Birthdays
+            </div>
+
+            <div class="birthday">
+
+                🎂
+
+                <span>
+                    <strong>Sara</strong>
+                    has a birthday today.
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="sidebar-card">
+
+            <div class="sidebar-title">
+                Contacts
+                <div>
+                    <i class="fa-solid fa-video"></i>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i class="fa-solid fa-ellipsis"></i>
+                </div>
+            </div>
+
+
+            <div class="contact">
+                <span class="online"></span>
+                <div class="avatar small">A</div>
+                Ayesha
+            </div>
+
+            <div class="contact">
+                <span class="online"></span>
+                <div class="avatar small">M</div>
+                Maria
+            </div>
+
+            <div class="contact">
+                <span class="online"></span>
+                <div class="avatar small">S</div>
+                Sara
+            </div>
+
+            <div class="contact">
+                <div class="avatar small">R</div>
+                Rehan
+            </div>
+
+            <div class="contact">
+                <div class="avatar small">H</div>
+                Hamza
+            </div>
+
+        </div>
+
+
+    </aside>
+
+</main>
+
+
+
+<!-- =========================
+     MOBILE BOTTOM NAV
+========================= -->
+
+<div class="mobile-nav">
+
+    <button onclick="showPage('home')">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+    </button>
+
+    <button>
+        <i class="fa-solid fa-user-group"></i>
+        <span>Friends</span>
+    </button>
+
+    <button>
+        <i class="fa-solid fa-plus-circle"></i>
+        <span>Create</span>
+    </button>
+
+    <button>
+        <i class="fa-brands fa-facebook-messenger"></i>
+        <span>Chat</span>
+    </button>
+
+    <button onclick="toggleMenu()">
+        <i class="fa-solid fa-bars"></i>
+        <span>Menu</span>
+    </button>
+
+</div>
+
+
+
+<!-- =========================
+     MENU POPUP
+========================= -->
+
+<div id="menuPopup" class="menu-popup">
+
+    <h2>Menu</h2>
+
+    <div class="menu-item">
+        <i class="fa-solid fa-user"></i>
+        Profile
+    </div>
+
+    <div class="menu-item">
+        <i class="fa-solid fa-gear"></i>
+        Settings
+    </div>
+
+    <div class="menu-item">
+        <i class="fa-solid fa-moon"></i>
+        Dark Mode
+    </div>
+
+    <div class="menu-item">
+        <i class="fa-solid fa-circle-question"></i>
+        Help & Support
+    </div>
+
+    <div class="menu-item">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Log Out
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+    // Notification Panel
+    function toggleNotifications() {
+
+        const panel =
+            document.getElementById("notificationPanel");
+
+        panel.classList.toggle("show");
+
+    }
+
+
+    // Menu
+    function toggleMenu() {
+
+        const menu =
+            document.getElementById("menuPopup");
+
+        menu.classList.toggle("show");
+
+    }
+
+
+    // Like Post
+    function likePost(button) {
+
+        const icon = button.querySelector("i");
+
+        if (button.classList.contains("liked")) {
+
+            button.classList.remove("liked");
+
+            icon.className =
+                "fa-regular fa-thumbs-up";
+
+        } else {
+
+            button.classList.add("liked");
+
+            icon.className =
+                "fa-solid fa-thumbs-up";
+
+        }
+
+    }
+
+
+    // Comments
+    function toggleComments(id) {
+
+        const comments =
+            document.getElementById(id);
+
+        comments.classList.toggle("show");
+
+    }
+
+
+    // Share
+    function sharePost() {
+
+        if (navigator.share) {
+
+            navigator.share({
+                title: "Facebook Lite",
+                text: "Check out this post!"
+            });
+
+        } else {
+
+            alert("Post link copied!");
+
+        }
+
+    }
+
+
+    // Create Post
+    function createPost() {
+
+        const input =
+            document.getElementById("postInput");
+
+        const text =
+            input.value.trim();
+
+        if (text === "") {
+
+            alert("Please write something first!");
+
+            return;
+
+        }
+
+
+        const post =
+            document.createElement("article");
+
+        post.className = "post new-post";
+
+        post.innerHTML = `
+
+            <div class="post-header">
+
+                <div class="avatar">
+                    S
+                </div>
+
+                <div class="post-user">
+
+                    <strong>Sania</strong>
+
+                    <small>
+                        Just now ·
+                        <i class="fa-solid fa-earth-americas"></i>
+                    </small>
+
+                </div>
+
+            </div>
+
+            <div class="post-text">
+
+                <p>${escapeHTML(text)}</p>
+
+            </div>
+
+            <div class="post-stats">
+
+                <span>👍 0</span>
+
+                <span>0 comments</span>
+
+            </div>
+
+            <div class="post-actions">
+
+                <button onclick="likePost(this)">
+                    <i class="fa-regular fa-thumbs-up"></i>
+                    Like
+                </button>
+
+                <button>
+                    <i class="fa-regular fa-comment"></i>
+                    Comment
+                </button>
+
+                <button onclick="sharePost()">
+                    <i class="fa-solid fa-share"></i>
+                    Share
+                </button>
+
+            </div>
+
+        `;
+
+
+        const feed =
+            document.querySelector(".feed");
+
+        const createPostBox =
+            document.querySelector(".create-post");
+
+        feed.insertBefore(
+            post,
+            createPostBox.nextElementSibling
+        );
+
+        input.value = "";
+
+    }
+
+
+    // Security helper
+    function escapeHTML(text) {
+
+        const div =
+            document.createElement("div");
+
+        div.textContent = text;
+
+        return div.innerHTML;
+
+    }
+
+
+    // Comment Enter
+    function commentEnter(event, input) {
+
+        if (event.key === "Enter") {
+
+            const value =
+                input.value.trim();
+
+            if (value === "") return;
+
+
+            const comment =
+                document.createElement("div");
+
+            comment.className = "comment";
+
+            comment.innerHTML = `
+
+                <div class="small-avatar">
+                    S
+                </div>
+
+                <div class="comment-body">
+
+                    <strong>Sania</strong>
+
+                    <p>
+                        ${escapeHTML(value)}
+                    </p>
+
+                </div>
+
+            `;
+
+            input.parentElement
+                .parentElement
+                .insertBefore(
+                    comment,
+                    input.parentElement
+                );
+
+            input.value = "";
+
+        }
+
+    }
+
+
+    // Photo
+    function addPhoto() {
+
+        alert(
+            "Photo upload feature can be connected to your backend."
+  
